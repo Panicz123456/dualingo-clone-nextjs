@@ -1,5 +1,9 @@
-export default function Page() { 
-    return (
-        <div>Page</div>
+const LearnPage = () => { 
+    return ( 
+        <div>
+            Learn Page
+        </div>
     )
 }
+
+export default LearnPage
