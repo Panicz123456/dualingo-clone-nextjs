@@ -9,14 +9,7 @@ import {
   SignUpButton,
 } from "@clerk/nextjs";
 import { Loader } from "lucide-react";
-
-const languages = [
-  { code: "es", label: "Spanish" },
-  { code: "fr", label: "French" },
-  { code: "hr", label: "Croatia" },
-  { code: "it", label: "Italian" },
-  { code: "jp", label: "Japanese" },
-];
+import { Languages } from "@/constants/languages";
 
 export const Footer = () => {
   return (
@@ -27,9 +20,9 @@ export const Footer = () => {
         </ClerkLoading>
         <ClerkLoaded>
           <SignedOut>
-            {languages.map(({ code, label }) => (
+            {Languages.map(({ icon, label, id }) => (
               <SignUpButton
-                key={code}
+                key={id}
                 mode="modal"
                 afterSignInUrl="/learn"
                 afterSignUpUrl="/learn">
@@ -38,7 +31,7 @@ export const Footer = () => {
                   size="lg"
                   className="w-full cursor-default">
                   <Image
-                    src={`/${code}.svg`}
+                    src={icon}
                     alt={label}
                     height={32}
                     width={40}
@@ -50,14 +43,14 @@ export const Footer = () => {
             ))}
           </SignedOut>
           <SignedIn>
-            {languages.map(({ code, label }) => (
+            {Languages.map(({ id, label, icon }) => (
               <Button
-                key={code}
+                key={id}
                 variant="ghost"
                 size="lg"
                 className="w-full cursor-default">
                 <Image
-                  src={`/${code}.svg`}
+                  src={icon}
                   alt={label}
                   height={32}
                   width={40}
