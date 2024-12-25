@@ -13,6 +13,11 @@ const main = async () => {
 
     await db.delete(schema.courses);
     await db.delete(schema.userProgress);
+    await db.delete(schema.units);
+    await db.delete(schema.lessons);
+    await db.delete(schema.challenges);
+    await db.delete(schema.challengeOptions);
+    await db.delete(schema.challengeProgress);
 
     await db.insert(schema.courses).values([
       {
@@ -23,19 +28,29 @@ const main = async () => {
       {
         id: 2,
         title: "Italian",
-        imageSrc: "/it.svg"
+        imageSrc: "/it.svg",
       },
       {
         id: 3,
         title: "French",
-        imageSrc: "/fr.svg"
+        imageSrc: "/fr.svg",
       },
       {
         id: 4,
         title: "Croatian",
-        imageSrc: "/hr.svg"
+        imageSrc: "/hr.svg",
       },
     ]);
+
+    await db.insert(schema.units).values([
+      {
+        id: 1,
+        courseId: 1, //Spanish
+        title: "Unit 1",
+        description: "Learn the basic of Spanish",
+        order: 1,
+      }
+    ])
 
     console.log("Seeding finished");
   } catch (error) {
