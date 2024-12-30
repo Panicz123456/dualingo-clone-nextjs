@@ -1,5 +1,7 @@
 "use client";
 
+import { upsertChallengeProgress } from "@/actions/challenge-progress";
+import { reduceHearts } from "@/actions/user-progress";
 import { challengeOptions, challenges } from "@/db/schema";
 
 import { useState, useTransition } from "react";
@@ -8,9 +10,8 @@ import { Header } from "./Header";
 import { QuestionBubble } from "./question-bubble";
 import { Challenge } from "./challenge";
 import { Footer } from "./footer";
-import { upsertChallengeProgress } from "@/actions/challenge-progress";
+
 import { toast } from "sonner";
-import { reduceHearts } from "@/actions/user-progress";
 
 type Props = {
   initialPercentage: number;

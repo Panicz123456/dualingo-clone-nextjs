@@ -2,6 +2,7 @@ import { FeedWrapper } from "@/components/feed-wrapper";
 import { Header } from "@/app/(main)/learn/header";
 import { StickyWrapper } from "@/components/StickyWrapper";
 import { UserProgress } from "@/components/user-progress";
+import { lessons, units as unitSchema } from "@/db/schema";
 import {
   getCourseProgress,
   getLesson,
@@ -9,9 +10,10 @@ import {
   getUnits,
   getUserProgress,
 } from "@/db/queries";
-import { redirect } from "next/navigation";
+
 import { Unit } from "./Unit";
-import { lessons, units as unitSchema } from "@/db/schema";
+
+import { redirect } from "next/navigation";
 
 const LearnPage = async () => {
   const userProgressData = getUserProgress();

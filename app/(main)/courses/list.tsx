@@ -2,11 +2,12 @@
 
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
+import { toast } from "sonner";
 
 import { Card } from "./card";
+
 import { courses, userProgress } from "@/db/schema";
 import { upsertUserProgress } from "@/actions/user-progress";
-import { toast } from "sonner";
 
 
 type Props = {

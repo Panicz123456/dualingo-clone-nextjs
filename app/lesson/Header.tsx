@@ -1,7 +1,9 @@
-import { Progress } from "@/components/ui/progress";
-import { useExitModal } from "@/store/use-exit-model";
-import { InfinityIcon, X } from "lucide-react";
 import Image from "next/image";
+
+import { useExitModal } from "@/store/use-exit-model";
+import { Progress } from "@/components/ui/progress";
+
+import { InfinityIcon, X } from "lucide-react";
 
 type Props = {
   hearts: number;

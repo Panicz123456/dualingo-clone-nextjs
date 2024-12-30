@@ -1,8 +1,10 @@
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { SidebarItem } from "./sidebar-item";
+
+import { cn } from "@/lib/utils";
 import { ClerkLoaded, ClerkLoading, UserButton } from "@clerk/nextjs";
+
+import { SidebarItem } from "./sidebar-item";
 import { Loader } from "lucide-react";
 
 type Props = {
