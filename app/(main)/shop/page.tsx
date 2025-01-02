@@ -5,6 +5,8 @@ import { getUserProgress, getUserSubscription } from "@/db/queries";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { Items } from "./items";
+import { Promo } from "@/components/Promo";
+import { Quests } from "@/components/quests";
 
 const ShopPage = async () => {
   const userProgressData = getUserProgress();
@@ -51,6 +53,8 @@ const ShopPage = async () => {
             hearts={userProgress.hearts}
             hasActiveSubscription={false}
           />
+          {!isPro && <Promo />}
+          <Quests points={userProgress.points} />
         </div>
       </FeedWrapper>
     </div>
